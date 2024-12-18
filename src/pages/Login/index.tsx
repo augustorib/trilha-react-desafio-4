@@ -28,6 +28,10 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  const handleClick = () => {
+    alert("Parabéns desafio concluído");
+  };
+
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +53,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={!isValid} onClick={handleClick}/>
         </Column>
       </LoginContainer>
     </Container>
